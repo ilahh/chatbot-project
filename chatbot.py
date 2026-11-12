@@ -241,28 +241,7 @@ def ask_llm_rag(user_input, context):
 # FUNGSI UTAMA: HYBRID SYSTEM (3 Pendekatan)
 # ============================================================================
 
-def get_chatbot_response(user_input):
-    # PENDEKATAN 1: Pattern matching langsung
-    intent = match_intent(user_input)
-    if intent is not None:
-        return generate_response(intent)
-    
-    # PENDEKATAN 2: TF-IDF dengan threshold tinggi (>= 0.7)
-    intent_nlp, score = match_intent_nlp(user_input)
-    if intent_nlp is not None and score >= 0.7:
-        return generate_response(intent_nlp)
-    
-    # Cek similarity dengan KB untuk routing
-    context, max_score = retrieve_context(user_input, top_k=3)
-    
-    # PENDEKATAN 3a: RAG - Pertanyaan terkait KB (0.3 <= score < 0.7)
-    # LLM jawab HANYA dari konteks KB, tidak boleh pengetahuan sendiri
-    if context and max_score >= 0.3:
-        return ask_llm_rag(user_input, context)
-    
-    # PENDEKATAN 3b: LLM Bebas - Pertanyaan di luar KB (score < 0.3)
-    # LLM boleh jawab dari pengetahuan sendiri
-    return ask_llm_free(user_input)
+
 
 # ============================================================================
 # CHATBOT INTERFACE
