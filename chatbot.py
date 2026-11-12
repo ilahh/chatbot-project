@@ -110,7 +110,7 @@ else:
 
 # ============================================================================
 # PENDEKATAN 3: RAG (Retrieval-Augmented Generation)
-# LLM HANYA boleh jawab dari konteks KB, TIDAK BOLEH dari pengetahuan sendiri
+# LLM HANYA boleh menjawab dari konteks KB, TIDAK BOLEH dari pengetahuan sendiri
 # ============================================================================
 
 rag_corpus = []
