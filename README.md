@@ -97,8 +97,8 @@ cp .env.example .env
 Isi `.env` dengan API Key dan Account ID Cloudflare kamu:
 
 ```env
-CLOUDFLARE_API_KEY=cfut_xxxxxxxxx
-CLOUDFLARE_ACCOUNT_ID=xxxxxxxxx
+CLOUDFLARE_API_KEY=cfut_xxxxxxxxxx
+CLOUDFLARE_ACCOUNT_ID=xxxxxxxxxx
 ```
 
 > **Cara mendapatkan Cloudflare API Key:**
